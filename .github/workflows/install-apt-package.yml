@@ -1,0 +1,22 @@
+---
+name: Install apt packages
+
+on:
+  workflow_dispatch:
+
+env:
+  # https://ourcodeworld.com/articles/read/1409/how-to-use-musescore-3-in-headless-mode-in-ubuntu-2004
+  QT_QPA_PLATFORM: offscreen
+
+jobs:
+  install_ap_package:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Install “musescore3”
+        run: sudo apt install musescore3
+      - name: List installed files of the package “musescore3”
+        run: dpkg -L musescore3
+      - name: Show version of the installed package “/usr/bin/mscore3”
+        run: mscore3 --version
