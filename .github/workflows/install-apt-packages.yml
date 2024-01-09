@@ -16,3 +16,5 @@ jobs:
 
       - name: Install musescore3
         run: sudo apt install musescore3
+      - name: Show informations about the installed package
+        run: dpkg -L musescore3
