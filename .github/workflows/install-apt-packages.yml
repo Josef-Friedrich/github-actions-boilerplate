@@ -14,7 +14,9 @@ jobs:
 
     steps:
 
-      - name: Install musescore3
+      - name: Install “musescore3”
         run: sudo apt install musescore3
-      - name: Show informations about the installed package
+      - name: List installed files of the package “musescore3”
         run: dpkg -L musescore3
+      - name: Show version of the installed package “/usr/bin/mscore3”
+        run: mscore3 --version
