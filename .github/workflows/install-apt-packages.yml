@@ -10,7 +10,8 @@ on:
   workflow_dispatch:
 
 env:
-  DISPLAY: ':0'
+  # https://ourcodeworld.com/articles/read/1409/how-to-use-musescore-3-in-headless-mode-in-ubuntu-2004
+  QT_QPA_PLATFORM: offscreen
 
 jobs:
   build:
