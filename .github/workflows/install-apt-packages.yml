@@ -1,3 +1,4 @@
+---
 name: Install apt packages
 
 on:
@@ -7,6 +8,9 @@ on:
     branches: [ "main" ]
 
   workflow_dispatch:
+
+env:
+  DISPLAY: ':0'
 
 jobs:
   build:
