@@ -1,0 +1,17 @@
+name: Docker Service
+on:
+  workflow_dispatch:
+
+jobs:
+  # Label of the container job
+  container-job:
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+
+
+    # Service containers to run with `container-job`
+    services:
+      # Label used to access the service container
+      icinga:
+        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idservicesservice_idimage
+        image: icinga/icinga2

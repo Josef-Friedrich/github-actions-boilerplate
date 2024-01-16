@@ -1,0 +1,21 @@
+name: Build TypeDoc
+on:
+  workflow_dispatch:
+
+jobs:
+  build_typedoc:
+    runs-on: ubuntu-latest
+    name: Build TypeDoc
+    steps:
+    - uses: actions/checkout@v2
+    - id: Build-TypeDoc
+      uses: zakodium/typedoc-action@v2.8.0
+      with:
+        entry: 'src/main.ts'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+    - run: find docs
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
