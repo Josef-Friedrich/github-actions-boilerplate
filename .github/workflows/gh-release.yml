@@ -1,6 +1,9 @@
-name: Main
+name: Create github release
 
 on: push
+
+permissions:
+  contents: write
 
 jobs:
   build:
